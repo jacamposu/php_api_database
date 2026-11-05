@@ -1,0 +1,134 @@
+{
+    "Align": {
+        "concatenate": "concat_ws(\"' - '\", AlDescription)",
+        "orderBy": " order by AlDescription"
+    },
+    "AppStyle": {
+        "concatenate": "concat_ws(\"' - '\", AppDescription)",
+        "orderBy": " order by AppDescription"
+    },
+    "Cities": {
+        "concatenate": "concat_ws(\"' - '\", CiCityName)",
+        "orderBy": " order by CiCityName"
+    },
+    "ControlPasswords": {
+        "concatenate": "concat_ws(\"' - '\", ConPssUser, ConPssAccessNumber, ConPssPassword, ConPssDateCreation)",
+        "orderBy": " order by ConPssUser, ConPssAccessNumber, ConPssPassword, ConPssDateCreation"
+    },
+    "Countries": {
+        "concatenate": "concat_ws(\"' - '\", CoCountryName)",
+        "orderBy": " order by CoCountryName"
+    },
+    "Dictionary": {
+        "concatenate": "concat_ws(\"' - '\", DiTableName, DiFieldName, DiFieldType, IdInputType, IdInputTypeForm, IdIcon)",
+        "orderBy": " order by DiTableName, DiFieldName"
+    },
+    "Directories": {
+        "concatenate": "concat_ws(\"' - '\", DirParentDirectory, DirName)",
+        "orderBy": " order by NameRepository"
+    },
+    "Directories DirParentDirectory": {
+        "concatenate": "concat_ws(\"' - '\", Dir_DirParentDirectory.DirParentDirectory, Dir_DirParentDirectory.DirName, Dir_DirParentDirectory.DirDateModify)",
+        "orderBy": " order by Dir_DirParentDirectory.DirParentDirectory, Dir_DirParentDirectory.DirName, Dir_DirParentDirectory.DirDateModify"
+    },
+    "FieldType": {
+        "concatenate": "concat_ws(\"' - '\", FtDescription)",
+        "orderBy": " order by FtDescription"
+    },
+    "Files": {
+        "concatenate": "concat_ws(\"' - '\", FilDirectory, FilFileName)",
+        "orderBy": " order by FilDirectory, FilFileName"
+    },
+    "Icons": {
+        "concatenate": "concat_ws(\"' - '\", IcFontAwesome)",
+        "orderBy": " order by IcFontAwesome"
+    },
+    "IconsGroup": {
+        "concatenate": "concat_ws(\"' - '\", IcoGroDescription)",
+        "orderBy": " order by IcoGroDescription asc"
+    },
+    "IdentificationTypes": {
+        "concatenate": "concat_ws(\"' - '\", ItDescription)",
+        "orderBy": " order by ItDescription"
+    },
+    "InputType": {
+        "concatenate": "concat_ws(\"' - '\", TyDescription)",
+        "orderBy": " order by TyDescription"
+    },
+    "InputTypeForm": {
+        "concatenate": "concat_ws(\"' - '\", ItfDescription)",
+        "orderBy": " order by ItfDescription"
+    },
+    "Lang": {
+        "concatenate": "concat_ws(\"' - '\", LaLanguage)",
+        "orderBy": " order by LaLanguage"
+    },
+    "Menu": {
+        "concatenate": "concat_ws(\"' - '\", MeName)",
+        "orderBy": " order by MeName, MeUrl"
+    },
+    "MenuGroup": {
+        "concatenate": "concat_ws(\"' - '\", MenGroName)",
+        "orderBy": " order by MenGroName, MenGroState, MenGroIcon, MenGroStatusProcess"
+    },
+    "Mime": {
+        "concatenate": "concat_ws(\"' - '\", MimDocumentType)",
+        "orderBy": " order by MimIcon, MimDocumentType, MimTypeMime, MimExtension, MimColor"
+    },
+    "OwnersDir": {
+        "concatenate": "concat_ws(\"' - '\", OwnDirDirectory, OwnDirTypeOwner, OwnDirStatusProcess)",
+        "orderBy": " order by OwnDirDirectory, OwnDirTypeOwner, OwnDirStatusProcess"
+    },
+    "OwnersFil": {
+        "concatenate": "concat_ws(\"' - '\", OwnFilFile, OwnFilTypeOwner, OwnFilOwner, OwnFilStatusProcess)",
+        "orderBy": " order by OwnFilFile, OwnFilTypeOwner, OwnFilOwner, OwnFilStatusProcess"
+    },
+    "Profiles": {
+        "concatenate": "concat_ws(\"' - '\", ProMenu, ProUserType)",
+        "orderBy": " order by ProMenu, ProUserType"
+    },
+    "SecurityQuestions": {
+        "concatenate": "concat_ws(\"' - '\", SecQueDescription)",
+        "orderBy": " order by SecQueid"
+    },
+    "Settings": {
+        "concatenate": "concat_ws(\"' - '\", SetDescription, SetValue)",
+        "orderBy": " order by SetDescription, SetValue"
+    },
+    "States": {
+        "concatenate": "concat_ws(\"' - '\", StStateName)",
+        "orderBy": " order by StStateName"
+    },
+    "TypeOwner": {
+        "concatenate": "concat_ws(\"' - '\", TypOwnDescription, TypOwnStatusProcess)",
+        "orderBy": " order by TypOwnDescription, TypOwnStatusProcess"
+    },
+    "TypeText": {
+        "concatenate": "concat_ws(\"' - '\", TypTexDescription)",
+        "orderBy": " order by TypTexDescription, TypTexStatusProcess"
+    },
+    "UserData": {
+        "concatenate": "concat_ws(\"' - '\", UseDatIdeType, UseDatCitie, UseDatState, UseDatCountry, UseDatUser)",
+        "orderBy": " order by UseDatIdeType, UseDatCitie, UseDatState, UseDatCountry, UseDatUser"
+    },
+    "UserGroups": {
+        "concatenate": "concat_ws(\"' - '\", UgDescription)",
+        "orderBy": " order by UgDescription"
+    },
+    "Users": {
+        "concatenate": "concat_ws(\"' - '\", UseSurname, UseFirtsName)",
+        "orderBy": " order by IdUserTypeUser ASC, IdUserStatus ASC, UsrSurname ASC, UsrFirtsName ASC, UsrPassword ASC"
+    },
+    "UserStatus": {
+        "concatenate": "concat_ws(\"' - '\", UsDescription)",
+        "orderBy": " order by UsDescription"
+    },
+    "UserTypes": {
+        "concatenate": "concat_ws(\"' - '\", UtDescription)",
+        "orderBy": " order by IdUserGroup, UtDescription"
+    },
+    "VersionFiles": {
+        "concatenate": "concat_ws(\"' - '\", VerFilFile, VerFilNumVersion, VerFilStatusProcess)",
+        "orderBy": " order by VerFilFile, VerFilNumVersion, VerFilStatusProcess"
+    }
+}

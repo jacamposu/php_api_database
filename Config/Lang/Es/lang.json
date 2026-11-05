@@ -1,0 +1,20 @@
+{
+    "model_not_found":"El archivo modelo no existe en el repositorio.",
+    "invalid_token":"TOKEN INVALIDO: [{{token}}]",
+    "model_not_data":"No fué posible extraer la información del modelo de datos.",
+    "record_already_exists":"El registro ya existe en la base de datos.",
+    "incorrect_option_get":"Opción incorrecta para el método GET",
+    "incorrect_method":"El método seleccionado no está definido en esta aplicación.",
+    "unselect_motordb":"No se ha seleccionado un motor para la base de datos.",
+    "wrong_query_type":"Tipo de consulta inválida, debe ser de tipo ({{query}})",
+    "wrong_table_query":"La tabla es incorrecta, no está definida en el query",
+    "controller_not_found":"El controlador no ha sido encontrado",
+    "method_not_found":"El método no ha sido encontrado",
+    "not_process_list":"No se pueden procesar listas en el método GetAll",
+    "list_required":"Debe ser una lista para procesarse",
+    "resource_not_exist":"El recurso especificado [{{value}}] no existe en la consulta",
+    "value_required":"El valor {{value}} es requerido",
+    "clause_where_included": "La consulta no debe contener la cláusula where en su sintaxis",
+    "class_not_found": "El modelo no ha sido encontrado",
+    "type_result_not_found": "Tipo de resultado no encontrado"
+}

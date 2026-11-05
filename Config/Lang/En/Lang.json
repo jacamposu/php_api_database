@@ -1,0 +1,20 @@
+{
+    "model_not_found":"The model file does not exists in repository.",
+    "invalid_token":"Invalid token: [{{token}}]",
+    "model_not_data":"It was not possible to extract the information from the data model.",
+    "record_already_exists":"The record already exists in the database.",
+    "incorrect_option_get":"Incorrect option for the GET method",
+    "incorrect_method":"The selected method is not defined in this application.",
+    "unselect_motordb":"No engine has been selected for the database.",
+    "wrong_query_type":"Invalid query type, must be of type ({{query}})",
+    "wrong_table_query":"The table is incorrect, it is not defined in the query",
+    "controller_not_found":"The driver has not been found",
+    "method_not_found":"The method has not been found",
+    "not_process_list":"It cannot to process a list in this method",
+    "list_required":"It must be a list to be proccessed",
+    "resource_not_exist":"The specified resource doesnt exists in query",
+    "value_required":"The value {{value}} is mandatory",
+    "clause_where_included": "The query cannot contain the where clause in its syntax",
+    "class_not_found": "The model has not been found",
+    "type_result_not_found": "Type result not found"
+}

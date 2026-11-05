@@ -1,0 +1,5 @@
+CREATE PROCEDURE `UserAdd`(IN `UseId` VARCHAR(255), IN `UseUserType` VARCHAR(255), IN `UseSurname` VARCHAR(255), IN `UseSecondSurname` VARCHAR(255), IN `UseFirtsName` VARCHAR(255), IN `UseEmail` VARCHAR(255), IN `UseUserStatus` VARCHAR(255), IN `UseFailedAttempts` INT(1), IN `UseLastAccess` DATE, IN `UseLastIp` VARCHAR(255), IN `UseLang` VARCHAR(2), IN `UseAppStyle` VARCHAR(2)) 
+NOT DETERMINISTIC CONTAINS 
+SQL SQL SECURITY DEFINER 
+INSERT INTO users (UseId, UseFirtsName, UseSecondName, UseSurname, UseSecondSurname, UseEmail, UseUserType, UseUserStatus, UseFailedAttempts, UseLastAccess, UseLastIp, UseLang, UseAppStyle) 
+values (@UseId, @UseFirtsName, @UseSecondName, @UseSurname, @UseSecondSurname, @UseEmail, @UseUserType, @UseUserStatus, @UseFailedAttempts, @UseLastAccess, @UseLastIp, @UseLang, @UseAppStyle)
