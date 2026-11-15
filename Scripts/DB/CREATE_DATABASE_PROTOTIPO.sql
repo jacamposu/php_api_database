@@ -119,16 +119,6 @@ CREATE TABLE IF NOT EXISTS `usergroups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-CREATE TABLE IF NOT EXISTS `userstatus` (
-  `UsId` varchar(2) NOT NULL COMMENT 'Id',
-  `UsDescription` varchar(60) NOT NULL COMMENT 'Description',
-  `UsCreated_at` datetime DEFAULT NULL COMMENT 'Created at',
-  `UsDeleted_at` datetime DEFAULT NULL COMMENT 'Deleted at',
-  PRIMARY KEY (`UsId`),
-  UNIQUE KEY `UserStatus_UsDescription` (`UsDescription`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
 CREATE TABLE IF NOT EXISTS `httpcodes` (
   `HcMessage` char(20) NOT NULL,
   `HcColor` char(30) NOT NULL,
@@ -187,6 +177,17 @@ CREATE TABLE IF NOT EXISTS `cities` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
+CREATE TABLE IF NOT EXISTS `userstatus` (
+  `UsId` varchar(2) NOT NULL COMMENT 'Id',
+  `UsStatus` varchar(60) NOT NULL COMMENT 'User Status',
+  `UsDescription` varchar(60) NOT NULL COMMENT 'Description error',
+  `UsCreated_at` datetime DEFAULT NULL COMMENT 'Created at',
+  `UsDeleted_at` datetime DEFAULT NULL COMMENT 'Deleted at',
+  PRIMARY KEY (`UsId`),
+  UNIQUE KEY `UserStatus_UsDescription` (`UsDescription`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 CREATE TABLE IF NOT EXISTS `users` (
   `UsrId` varchar(20) NOT NULL COMMENT 'Id',
   `IdLang` char(3) NOT NULL COMMENT 'Lang user',
@@ -235,7 +236,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-CREATE TABLE IF NOT EXISTS `controlpasswords` (
+CREATE TABLE IF NOT EXISTS `userspassword` (
   	`CpId` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
   	`IdUser` varchar(20) NOT NULL COMMENT 'User',
   	`CpAccessNumber` int(10) unsigned NOT NULL COMMENT 'Access number',
@@ -247,8 +248,8 @@ CREATE TABLE IF NOT EXISTS `controlpasswords` (
   	`CpCreated_at` datetime DEFAULT NULL COMMENT 'Created at',
   	`CpDeleted_at` datetime DEFAULT NULL COMMENT 'Deleted at',
   	PRIMARY KEY (`CpId`),
-  	KEY `FK_ControlPasswords_IdUser` (`IdUser`),
-  	CONSTRAINT `Cnst_Users_ControlPassword_4895` FOREIGN KEY (`IdUser`) REFERENCES `users` (`UsrId`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  	KEY `FK_UsersPassword_IdUser` (`IdUser`),
+  	CONSTRAINT `Cnst_Users_UsersPassword_4895` FOREIGN KEY (`IdUser`) REFERENCES `users` (`UsrId`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 
@@ -501,3 +502,25 @@ CREATE TABLE IF NOT EXISTS `langresources` (
   `LrCreated_at` datetime DEFAULT NULL COMMENT 'Created at',
   `LrDeleted_at` datetime DEFAULT NULL COMMENT 'Deleted at'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE IF NOT EXISTS `userslogin` (
+  `Id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
+  `IdUser` varchar(128) NOT NULL COMMENT 'User',
+  `IdStatus` char(4) NOT NULL COMMENT 'Problem',
+  `Attempt` int(10) unsigned NOT NULL COMMENT 'Attempt',
+  `Created_at` datetime DEFAULT NULL COMMENT 'Created at',
+  `Deleted_at` datetime DEFAULT NULL COMMENT 'Deleted at',
+  PRIMARY KEY (`Id`),
+  KEY `FK_Login_IdStatus` (`IdStatus`),
+  CONSTRAINT `Cnst_UserStatus_Login_5440` FOREIGN KEY (`IdStatus`) REFERENCES `userstatus` (`UsId`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=637 DEFAULT CHARSET=latin1;
+
+
+-- CREATE TABLE IF NOT EXISTS `msglogin` (
+--   `Id` char(4) NOT NULL COMMENT 'Id',
+--   `Description` longtext NOT NULL COMMENT 'Description',
+--   `Created_at` datetime DEFAULT NULL COMMENT 'Created at',
+--   `Deleted_at` datetime DEFAULT NULL COMMENT 'Deleted at',
+--   PRIMARY KEY (`Id`)
+-- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

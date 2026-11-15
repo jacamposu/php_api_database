@@ -262,7 +262,8 @@ class UsersModel
 							INNER JOIN states ON StId = IdStateUser
 						WHERE UsrId = :idUser 
 							AND CpPassword = :passwordHash
-							AND IdUserStatus = 'A'",
+							AND IdUserStatus = 'A'
+							AND CpDeleted_at IS NULL",
 			'type_result' => 'Row'
 		];
 	}
@@ -343,7 +344,10 @@ class UsersModel
 	public function GetUserIdChangePw():array
 	{
 		return [
-			'query' => "SELECT UsrId FROM users WHERE UsrId = :idUser AND UsrPassword = :passwordHash",
+			'query' => "SELECT US.UsrId 
+				FROM users AS US
+				JOIN controlpasswords AS CP ON CP.IdUser = US.UsrId
+				WHERE US.UsrId = :idUser AND CP.CpPassword = :passwordHash",
 			'type_result' => 'Value'
 		];
 	}

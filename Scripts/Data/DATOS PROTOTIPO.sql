@@ -1190,7 +1190,6 @@ INSERT INTO `fieldtype` (`FtId`, `FtDescription`, `FtCreated_at`, `FtDeleted_at`
 	('SMA', 'Smallint', now(), NULL),
 	('VAR', 'Varchar', now(), NULL);
 
-
 INSERT INTO `icons` (`IcId`, `IcFontAwesome`, `IcCreated_at`, `IcDeleted_at`) VALUES
 	('Add', 'fas fa-plus-square', now(), NULL),
 	('Address', 'fas fa-map-signs', now(), NULL),
@@ -1325,7 +1324,6 @@ INSERT INTO `icons` (`IcId`, `IcFontAwesome`, `IcCreated_at`, `IcDeleted_at`) VA
 	('XSLXFile', 'fas fa-file-excel', now(), NULL),
 	('ZIPFile', 'far fa-file-archive', now(), NULL);
 
-
 INSERT INTO `identificationtypes` (`ItId`, `ItDescription`, `ItCreated_at`, `ItDeleted_at`) VALUES
 	('CC', 'Cedula de Ciudadanía', now(), NULL),
 	('CE', 'Cedula de Extranjería', now(), NULL),
@@ -1369,60 +1367,59 @@ INSERT INTO `lang` (`LaId`, `LaLanguage`, `LaCreated_at`, `LaDeleted_at`) VALUES
 	('Es', 'Spanish', now(), NULL);
 
 INSERT INTO `menu` (`MeId`, `IdParentMenu`, `MeName`, `MeMenuType`, `MeMenuLevel`, `MeUrl`, `MeParams`, `IdIcon`, `MeCreated_at`, `MeDeleted_at`) VALUES
-('60a809a88d202', '60a809a88d202', 'Repositorio',1,1, 'javascript:void();', '', 'Paperclip', now(), NULL),
-('60a80a2f2c6a0', '60a80a2f2c6a0', 'Parámetros',1,1, 'javascript:void();', '', 'Address', now(), NULL),
-('60a80aa943c8a', '60a80aa943c8a', 'Developer',1,1, 'javascript:void();', '', 'HtmlCode', now(), NULL),
-('60a80ab9b42b2', '60a80ab9b42b2', 'Auditoría',1,1, 'javascript:void();', '', 'Search', now(), NULL),
-('60a80af9cbed4', '60a80af9cbed4', 'Configuración',1,1, 'javascript:void();', '', 'Tools', now(), NULL),
-('60a80b1dc378c', '60a80b1dc378c', 'Usuarios',1,1, 'javascript:void();', '', 'Users', now(), NULL),
-('60a80b45d566e', '60a80b45d566e', 'Dashboard',1,1, 'javascript:void();', '', 'ChartBar', now(), NULL),
-('60a824153c746', '60a80b1dc378c', 'Config usuarios',1,2, 'javascript:void();', '', 'Cogs', now(), NULL),
-('60a826983551e', '60a80aa943c8a', 'Config idiomas',1,2, 'javascript:void();', '', 'Lang', now(), NULL),
-('60a826b5af8ed', '60a80aa943c8a', 'Config developer',1,2, 'javascript:void();', '', 'HtmlCode', now(), NULL),
-('60a83336a2ec1', '60a80ab9b42b2', 'Config Auditoria',1,2, 'javascript:void();', '', 'Cog', now(), NULL),
-('60a80e8757e03', '60a809a88d202', 'Gestión de archivos',2,2, 'Repository/All/', 'action=showGridFiles&recordEdit=1', 'File', now(), NULL),
-('60a8111d6dd10', '60a80a2f2c6a0', 'Departamentos',2,2, 'States/All/', '', 'Americas', now(), NULL),
-('60a8122856573', '60a80a2f2c6a0', 'Ciudades / Municipios',2,2, 'Cities/All/', '', 'Americas', now(), NULL),
-('60a8126898f30', '60a80a2f2c6a0', 'Paises',2,2, 'Countries/All/', '', 'Americas', now(), NULL),
-('60a81308beb1b', '60a80ab9b42b2', 'Reportes Dwn',2,2, 'Reports/All/', '', 'DownloadFile', now(), NULL),
-('60a814a637747', '60a80ab9b42b2', 'Control de login',2,2, 'LoginLOG/All/', '', 'Login', now(), NULL),
-('60a814c7858e1', '60a80ab9b42b2', 'Send mail',2,2, 'MailLOG/All/', '', 'Email', now(), NULL),
-('60a814f271f3d', '60a80ab9b42b2', 'Cambios BD',2,2, 'ChangesBDLOG/All/', '', 'Database', now(), NULL),
-('60a8152a42636', '60a80ab9b42b2', 'Transacciones SQL',2,2, 'SqlLogLOG/All/', '', 'Database', now(), NULL),
-('60a8155ab9ee3', '60a80ab9b42b2', 'Control de passwords',2,2, 'ControlPasswordsLOG/All/', '', 'Key', now(), NULL),
-('60a8158553cad', '60a80aa943c8a', 'Mime',2,2, 'Mime/All/', '', 'File', now(), NULL),
-('60a815c4a7b05', '60a80aa943c8a', 'Opciones de Menú',2,2, 'Menu/All/', '', 'Menu', now(), NULL),
-('60a81f250d264', '60a80aa943c8a', 'Generador interfaces *',2,2,'', '', 'HtmlCode', now(), NULL),
-('60a81f49b595a', '60a80aa943c8a', 'Galería de íconos',2,2, 'Icons/All/', '', 'Icons', now(), NULL),
-('60a82158cc3d1', '60a80aa943c8a', 'Diccionario de datos',2,2, 'Dictionary/All/', '', 'Book', now(), NULL),
-('60a8222b2bd88', '60a80aa943c8a', 'Editar wiki',2,2, 'Wiki/All/', 'action=showFormAdd', 'Wiki', now(), NULL),
-('60a8227b68c7e', '60a80aa943c8a', 'Modelador BD *',2,2,'', '', 'Database', now(), NULL),
-('60a8230a37fe6', '60a80aa943c8a', 'Idiomas',2,2, 'Lang/All/', '', 'Lang', now(), NULL),
-('60a8234510c6b', '60a80af9cbed4', 'Sistema',2,2, 'Settings/All/', '', 'Cog', now(), NULL),
-('60a824945fad6', '60a80b1dc378c', 'Perfil de los usuarios',2,2, 'ProfilingUser/All/', '', 'UserCog', now(), NULL),
-('60a824c6cbcdc', '60a80b1dc378c', 'Lista de usuarios',2,2, 'Users/All/', '', 'Users', now(), NULL),
-('60a824ff6a349', '60a80b1dc378c', 'Datos usuarios',2,2, 'UserData/All/', '', 'User', now(), NULL),
-('60a825347f35d', '60a80b45d566e', 'Dashboard 1',2,2, 'Estadisticas/All/', '', 'ChartPie', now(), NULL),
-('60a8276887561', '60a826983551e', 'Idiomas Recursos',2,3, 'LangResources/All/', '', 'Lang', now(), NULL),
-('60a827b195f76', '60a826983551e', 'Funciones App',2,3, 'LangFunct/All/', '', 'Lang', now(), NULL),
-('60a8298e847db', '60a826983551e', 'Idiomas diccionario',2,3, 'LangDictionary/All/', '', 'Lang', now(), NULL),
-('60a829cdc72b6', '60a826983551e', 'JavaScript',2,3, 'LangJS/All/', '', 'Lang', now(), NULL),
-('60a829eb392c4', '60a826983551e', 'Idiomas Menú',2,3, 'LangMenu/All/', '', 'Lang', now(), NULL),
-('60a832fab751f', '60a824153c746', 'Preguntas de seguridad',2,3, 'SecurityQuestions/All/', '', 'Question', now(), NULL),
-('60a8335ec3396', '60a83336a2ec1', 'Tipos de query',2,3, 'QueryTypes/All/', '', 'Database', now(), NULL),
-('60a8344f0a32c', '60a83336a2ec1', 'Mensajes de login',2,3, 'MsgLogin/All/', '', 'Login', now(), NULL),
-('60a835772553b', '60a826b5af8ed', 'Grupos de íconos',2,3, 'IconsGroup/All/', '', 'Icons', now(), NULL),
-('60a8365d4b4af', '60a826b5af8ed', 'Inputs formulario',2,3, 'InputTypeForm/All/', '', 'GripLines', now(), NULL),
-('60a836b1d641d', '60a826b5af8ed', 'Tipo de campo',2,3, 'FieldType/All/', '', 'GripLines', now(), NULL),
-('60a8372b53aa2', '60a826b5af8ed', 'Tipo de texto',2,3, 'TypeText/All/', '', 'Text', now(), NULL),
-('60a8379691e10', '60a826b5af8ed', 'Estilos de la aplicación',2,3, 'AppStyle/All/', '', 'ColorsPalette', now(), NULL),
-('60a837e47d279', '60a826b5af8ed', 'Alineación',2,3, 'Align/All/', '', 'AlignLeft', now(), NULL),
-('60a837ff4e008', '60a826b5af8ed', 'Tipo de input tabla',2,3, 'InputType/All/', '', 'Table', now(), NULL),
-('60a8389e9bee0', '60a824153c746', 'Grupos usuarios',2,3, 'UserGroups/All/', '', 'Users', now(), NULL),
-('60a839052198c', '60a824153c746', 'Tipos de usuarios',2,3, 'UserTypes/All/', '', 'UserCheck', now(), NULL),
-('60a83989761d0', '60a824153c746', 'Tipos de identificación',2,3, 'IdentificationTypes/All/', '', 'IdCard', now(), NULL),
-('60a839b712b28', '60a824153c746', 'Estados de los usuarios',2,3, 'UserStatus/All/', '', 'UserCheck', now(), NULL);
-
+	('60a809a88d202', '60a809a88d202', 'Repositorio',1,1, 'javascript:void();', '', 'Paperclip', now(), NULL),
+	('60a80a2f2c6a0', '60a80a2f2c6a0', 'Parámetros',1,1, 'javascript:void();', '', 'Address', now(), NULL),
+	('60a80aa943c8a', '60a80aa943c8a', 'Developer',1,1, 'javascript:void();', '', 'HtmlCode', now(), NULL),
+	('60a80ab9b42b2', '60a80ab9b42b2', 'Auditoría',1,1, 'javascript:void();', '', 'Search', now(), NULL),
+	('60a80af9cbed4', '60a80af9cbed4', 'Configuración',1,1, 'javascript:void();', '', 'Tools', now(), NULL),
+	('60a80b1dc378c', '60a80b1dc378c', 'Usuarios',1,1, 'javascript:void();', '', 'Users', now(), NULL),
+	('60a80b45d566e', '60a80b45d566e', 'Dashboard',1,1, 'javascript:void();', '', 'ChartBar', now(), NULL),
+	('60a824153c746', '60a80b1dc378c', 'Config usuarios',1,2, 'javascript:void();', '', 'Cogs', now(), NULL),
+	('60a826983551e', '60a80aa943c8a', 'Config idiomas',1,2, 'javascript:void();', '', 'Lang', now(), NULL),
+	('60a826b5af8ed', '60a80aa943c8a', 'Config developer',1,2, 'javascript:void();', '', 'HtmlCode', now(), NULL),
+	('60a83336a2ec1', '60a80ab9b42b2', 'Config Auditoria',1,2, 'javascript:void();', '', 'Cog', now(), NULL),
+	('60a80e8757e03', '60a809a88d202', 'Gestión de archivos',2,2, 'Repository/All/', 'action=showGridFiles&recordEdit=1', 'File', now(), NULL),
+	('60a8111d6dd10', '60a80a2f2c6a0', 'Departamentos',2,2, 'States/All/', '', 'Americas', now(), NULL),
+	('60a8122856573', '60a80a2f2c6a0', 'Ciudades / Municipios',2,2, 'Cities/All/', '', 'Americas', now(), NULL),
+	('60a8126898f30', '60a80a2f2c6a0', 'Paises',2,2, 'Countries/All/', '', 'Americas', now(), NULL),
+	('60a81308beb1b', '60a80ab9b42b2', 'Reportes Dwn',2,2, 'Reports/All/', '', 'DownloadFile', now(), NULL),
+	('60a814a637747', '60a80ab9b42b2', 'Control de login',2,2, 'LoginLOG/All/', '', 'Login', now(), NULL),
+	('60a814c7858e1', '60a80ab9b42b2', 'Send mail',2,2, 'MailLOG/All/', '', 'Email', now(), NULL),
+	('60a814f271f3d', '60a80ab9b42b2', 'Cambios BD',2,2, 'ChangesBDLOG/All/', '', 'Database', now(), NULL),
+	('60a8152a42636', '60a80ab9b42b2', 'Transacciones SQL',2,2, 'SqlLogLOG/All/', '', 'Database', now(), NULL),
+	('60a8155ab9ee3', '60a80ab9b42b2', 'Control de passwords',2,2, 'ControlPasswordsLOG/All/', '', 'Key', now(), NULL),
+	('60a8158553cad', '60a80aa943c8a', 'Mime',2,2, 'Mime/All/', '', 'File', now(), NULL),
+	('60a815c4a7b05', '60a80aa943c8a', 'Opciones de Menú',2,2, 'Menu/All/', '', 'Menu', now(), NULL),
+	('60a81f250d264', '60a80aa943c8a', 'Generador interfaces *',2,2,'', '', 'HtmlCode', now(), NULL),
+	('60a81f49b595a', '60a80aa943c8a', 'Galería de íconos',2,2, 'Icons/All/', '', 'Icons', now(), NULL),
+	('60a82158cc3d1', '60a80aa943c8a', 'Diccionario de datos',2,2, 'Dictionary/All/', '', 'Book', now(), NULL),
+	('60a8222b2bd88', '60a80aa943c8a', 'Editar wiki',2,2, 'Wiki/All/', 'action=showFormAdd', 'Wiki', now(), NULL),
+	('60a8227b68c7e', '60a80aa943c8a', 'Modelador BD *',2,2,'', '', 'Database', now(), NULL),
+	('60a8230a37fe6', '60a80aa943c8a', 'Idiomas',2,2, 'Lang/All/', '', 'Lang', now(), NULL),
+	('60a8234510c6b', '60a80af9cbed4', 'Sistema',2,2, 'Settings/All/', '', 'Cog', now(), NULL),
+	('60a824945fad6', '60a80b1dc378c', 'Perfil de los usuarios',2,2, 'ProfilingUser/All/', '', 'UserCog', now(), NULL),
+	('60a824c6cbcdc', '60a80b1dc378c', 'Lista de usuarios',2,2, 'Users/All/', '', 'Users', now(), NULL),
+	('60a824ff6a349', '60a80b1dc378c', 'Datos usuarios',2,2, 'UserData/All/', '', 'User', now(), NULL),
+	('60a825347f35d', '60a80b45d566e', 'Dashboard 1',2,2, 'Estadisticas/All/', '', 'ChartPie', now(), NULL),
+	('60a8276887561', '60a826983551e', 'Idiomas Recursos',2,3, 'LangResources/All/', '', 'Lang', now(), NULL),
+	('60a827b195f76', '60a826983551e', 'Funciones App',2,3, 'LangFunct/All/', '', 'Lang', now(), NULL),
+	('60a8298e847db', '60a826983551e', 'Idiomas diccionario',2,3, 'LangDictionary/All/', '', 'Lang', now(), NULL),
+	('60a829cdc72b6', '60a826983551e', 'JavaScript',2,3, 'LangJS/All/', '', 'Lang', now(), NULL),
+	('60a829eb392c4', '60a826983551e', 'Idiomas Menú',2,3, 'LangMenu/All/', '', 'Lang', now(), NULL),
+	('60a832fab751f', '60a824153c746', 'Preguntas de seguridad',2,3, 'SecurityQuestions/All/', '', 'Question', now(), NULL),
+	('60a8335ec3396', '60a83336a2ec1', 'Tipos de query',2,3, 'QueryTypes/All/', '', 'Database', now(), NULL),
+	('60a8344f0a32c', '60a83336a2ec1', 'Mensajes de login',2,3, 'MsgLogin/All/', '', 'Login', now(), NULL),
+	('60a835772553b', '60a826b5af8ed', 'Grupos de íconos',2,3, 'IconsGroup/All/', '', 'Icons', now(), NULL),
+	('60a8365d4b4af', '60a826b5af8ed', 'Inputs formulario',2,3, 'InputTypeForm/All/', '', 'GripLines', now(), NULL),
+	('60a836b1d641d', '60a826b5af8ed', 'Tipo de campo',2,3, 'FieldType/All/', '', 'GripLines', now(), NULL),
+	('60a8372b53aa2', '60a826b5af8ed', 'Tipo de texto',2,3, 'TypeText/All/', '', 'Text', now(), NULL),
+	('60a8379691e10', '60a826b5af8ed', 'Estilos de la aplicación',2,3, 'AppStyle/All/', '', 'ColorsPalette', now(), NULL),
+	('60a837e47d279', '60a826b5af8ed', 'Alineación',2,3, 'Align/All/', '', 'AlignLeft', now(), NULL),
+	('60a837ff4e008', '60a826b5af8ed', 'Tipo de input tabla',2,3, 'InputType/All/', '', 'Table', now(), NULL),
+	('60a8389e9bee0', '60a824153c746', 'Grupos usuarios',2,3, 'UserGroups/All/', '', 'Users', now(), NULL),
+	('60a839052198c', '60a824153c746', 'Tipos de usuarios',2,3, 'UserTypes/All/', '', 'UserCheck', now(), NULL),
+	('60a83989761d0', '60a824153c746', 'Tipos de identificación',2,3, 'IdentificationTypes/All/', '', 'IdCard', now(), NULL),
+	('60a839b712b28', '60a824153c746', 'Estados de los usuarios',2,3, 'UserStatus/All/', '', 'UserCheck', now(), NULL);
 
 INSERT INTO `mime` (`MiId`, `IdIcon`, `MiDocumentType`, `MiTypeMime`, `MiExtension`, `MiColor`, `MiCreated_at`, `MiDeleted_at`) VALUES
 	('3g2', 'Question', 'Contenedor de audio/video 3GPP2', 'video/3gpp2', '3g2', 'red', now(), NULL),
@@ -1517,11 +1514,11 @@ INSERT INTO `securityquestions` (`SqId`, `SqDescription`, `SqCreated_at`, `SqDel
 INSERT INTO `usergroups` (`UgId`, `UgDescription`, `UgCreated_at`, `UgDeleted_at`) VALUES
 	('AS', 'Administración Sistema', now(), NULL);
 
-INSERT INTO `userstatus` (`UsId`, `UsDescription`, `UsCreated_at`, `UsDeleted_at`) VALUES
-	('A', 'Activo', now(), NULL),
-	('B', 'Bloqueado', now(), NULL),
-	('E', 'Eliminado', now(), NULL),
-	('I', 'Inactivo', now(), NULL);
+INSERT INTO `userstatus` (`UsId`, `UsStatus`, `UsDescription`, `UsCreated_at`, `UsDeleted_at`) VALUES
+	('A', 'Activo', 'Acceso Exitoso', now(), NULL),
+	('B', 'Bloqueado', 'Este usuario ha sido bloqueado porque ha superado el máximo de intentos para acceder al sistema. Por favor contacte al administrador del sistema.', now(), NULL),
+	('I', 'Inactivo', 'El usuario ha sido bloqueado por inactividad. Por favor contacte al administrador del sistema.', now(), NULL),
+	('W', 'Inválido', 'Credenciales inválidas.', now(), NULL);
 
 INSERT INTO `usertypes` (`UtId`, `IdUserGroup`, `UtDescription`, `UtCreated_at`, `UtDeleted_at`) VALUES
 	('Ad', 'AS', 'Administrador', now(), NULL);
@@ -1545,7 +1542,7 @@ INSERT INTO `httpcodes` (`HcMessage`, `HcColor`, `HcIcon`, `HcCreated_at`, `HcDe
 INSERT INTO `users` (`UsrId`, `IdLang`, `IdAppStyle`, `IdUserTypeUser`, `IdUserStatus`, `UsrSurname`, `UsrSecondSurname`, `UsrFirtsName`, `UsrSecondName`, `UsrEmail`, `IdIdentificationType`, `IdCity`, `IdStateUser`, `IdCountryUser`, `UsrIdentificationNumber`, `UsrCellphone`, `UsrAddress`, `UsrEncryptedId`, `UsrPhoto`, `UsrCreated_at`, `UsrDeleted_at`) VALUES
 	('admin', 'Es', 'TA', 'Ad', 'A', 'Sistema', '', 'Administrador', '', 'joseacamposu@gmail.com', 'NIT', '11001', '11', '57', '1234567890', '3115695537', 'Calle 190', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', '610d453bb7bdf', now(), NULL);
 
-INSERT INTO `controlpasswords` (`CpId`, `IdUser`, `CpAccessNumber`, `CpPassword`, `CpFailedAttempts`, `CpLastIp`, `CpChangePasswordRequired`, `CpCreated_at`, `CpDeleted_at`) VALUES
+INSERT INTO `userspassword` (`CpId`, `IdUser`, `CpAccessNumber`, `CpPassword`, `CpFailedAttempts`, `CpLastIp`, `CpChangePasswordRequired`, `CpCreated_at`, `CpDeleted_at`) VALUES
 	(1, 'admin', 1, '50ce07fa2493214986aca14145500e6ecfeefd1adc23eb0d6a1ac66f8068a15f527e17b21ef04ddb85e4cfb40a808e9ed5b755f3f583078ecd606ee3d9a6c769', 0, 'localhost', 0, now(), NULL);
 
 INSERT INTO `userquestion` (`UqId`, `IdUser`, `IdQuestion`, `UqResponse`, `UqCreated_at`, `UqDeleted_at`) VALUES
@@ -1605,6 +1602,11 @@ INSERT INTO `profiles` (`PrId`, `IdMenu`, `IdUserTypeProfile`, `PrVisibleMenu`, 
 	(51, '60a839052198c', 'Ad', 1, 1, 1, 1, 1, 1, NULL, NULL, now(), NULL),
 	(52, '60a83989761d0', 'Ad', 1, 1, 1, 1, 1, 1, NULL, NULL, now(), NULL),
 	(53, '60a839b712b28', 'Ad', 1, 1, 1, 1, 1, 1, NULL, NULL, now(), NULL);
+
+
+
+
+
 
 INSERT INTO `dictionary` (`DiId`, `DiTableName`, `DiFieldName`, `IdFieldType`, `DiLength`, `DiFormat`, `IdAlign`, `IdInputType`, `IdInputTypeForm`, `DiSizeInputForm`, `DiRequired`, `DiUnsigned`, `DiTextareaChars`, `DiTextareaRows`, `IdIcon`, `DiDisabled`, `DiReadOnly`, `DiDependentList`, `DiPattern`, `DiValidationForm`, `DiCreated_at`, `DiDeleted_at`) VALUES
 	('282571ae', 'Alias', 'KeyVerify', 'VAR',255, '', 'LEF', 'PSS', 'PSS', 'col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4',1,0,0,0, 'Key',0,0, '', '', '', now(), NULL),
@@ -2029,9 +2031,6 @@ INSERT INTO `langdictionary` (`LdId`, `LdSpanishDesc`, `LdSpanishHelp`, `LdEngli
     ('LogProblem', 'Descripci�n', '', 'Description', '', NOW()),
     ('LogUser', 'Usuario', '', 'User', '', NOW());
 
-
-
-
 INSERT INTO `langfunct` (`LfId`, `LfSpanish`, `LfEnglish`, `LfParams`, `LfCreated_at`, `LfDeleted_at`) VALUES
 	('msgInhUserExists', 'el usuario {$userCreate} no puede heredar la perfilación del usuario {$userInherit}, porque ya tiene una perfilación asociada.', 'the user {$userCreate} cannot inherit profile from user {$userInherit}, because it already has an associated profile.', '$userCreate, $userInherit', now(), NULL),
 	('msgInhUserNotExists', 'El usuario {$userInherit} no existe o no tiene una perfilación creada.', 'The user {$userInherit} does not exist or does not have a profile created.', '$userInherit', now(), NULL),
@@ -2049,7 +2048,6 @@ INSERT INTO `langfunct` (`LfId`, `LfSpanish`, `LfEnglish`, `LfParams`, `LfCreate
 	('returnMsgWrongDate', 'Fecha incorrecta [{$value}] para el campo [{$field}].', 'Wrong date [{$value}] for field [{$field}].', '$value, $field', now(), NULL),
 	('returnMsgWrongDateDesc', 'La Fecha [{$date}] del campo [{$desc}] es incorrecta, verifique que la fecha no sea inferior a [{$minYear}] y que corresponda al formato (yyyy-mm-dd).', 'The Date [{$date}] of the field [{$desc}] is incorrect, verify that the date is not less than [{$minYear}] and that it corresponds to the format (yyyy-mm -dd).', '$date, $desc, $minYear', now(), NULL),
 	('strDeleteRecord', 'El registro [{$recordEdit}] no se puede eliminar porque tiene [{$count}] registros relacionados en la tabla [{$table}]', 'Record [{$recordEdit}] cannot be deleted because it has [{$count}] related records in table [{$table}]', '$recordEdit, $table, $count', now(), NULL);
-
 
 INSERT INTO `langjs` (`LjsId`, `LjsSpanish`, `LjsEnglish`, `LjsCreated_at`, `LjsDeleted_at`) VALUES
 	('BtnCancel', 'Cancelar', 'Cancel', now(), NULL),
@@ -2072,7 +2070,6 @@ INSERT INTO `langjs` (`LjsId`, `LjsSpanish`, `LjsEnglish`, `LjsCreated_at`, `Ljs
 	('TextDontMoveDirectory', 'No existe un directorio al que se pueda enviar éste directorio.', 'There is no directory to which this directory can be sent.', now(), NULL),
 	('TextDontMoveFile', 'No existe un directorio al cual podamos enviar éste archivo.', 'There is no directory to which we can send this file.', now(), NULL),
 	('TitleDelete', 'Borrado', 'Erased', now(), NULL);
-
 
 INSERT INTO `langmenu` (`LmId`, `LmSpanish`, `LmEnglish`, `LmCreated_at`, `LmDeleted_at`) VALUES
 	('28f92a51', 'Archivos', 'Files', now(), NULL),
@@ -2130,7 +2127,6 @@ INSERT INTO `langmenu` (`LmId`, `LmSpanish`, `LmEnglish`, `LmCreated_at`, `LmDel
 	('60a839052198c', 'Tipos de usuarios', 'User typeÂ´s', now(), NULL),
 	('60a83989761d0', 'Tipos de identificación', 'Id types', now(), NULL),
 	('60a839b712b28', 'Estados de los usuarios', 'User status', now(), NULL);
-
 
 INSERT INTO `langresources` (`LrId`, `LrSpanish`, `LrEnglish`, `LrItem`, `LrCreated_at`, `LrDeleted_at`) VALUES
 	('Ajax', 'Seleccione municipio', 'Select city', 'GetCities', now(), NULL),

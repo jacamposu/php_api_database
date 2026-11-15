@@ -27,26 +27,6 @@ CREATE TABLE IF NOT EXISTS `changesbd` (
   CONSTRAINT `Cnst_Changesbd_QueryTypes_5452` FOREIGN KEY (`IdQueryType`) REFERENCES `querytypes` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE IF NOT EXISTS `msglogin` (
-  `Id` char(4) NOT NULL COMMENT 'Id',
-  `Description` longtext NOT NULL COMMENT 'Description',
-  `Created_at` datetime DEFAULT NULL COMMENT 'Created at',
-  `Deleted_at` datetime DEFAULT NULL COMMENT 'Deleted at',
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE IF NOT EXISTS `login` (
-  `Id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
-  `IdUser` varchar(128) NOT NULL COMMENT 'User',
-  `IdProblem` char(4) NOT NULL COMMENT 'Problem',
-  `Attempt` int(10) unsigned NOT NULL COMMENT 'Attempt',
-  `Created_at` datetime DEFAULT NULL COMMENT 'Created at',
-  `Deleted_at` datetime DEFAULT NULL COMMENT 'Deleted at',
-  PRIMARY KEY (`Id`),
-  KEY `FK_Login_IdProblem` (`IdProblem`),
-  CONSTRAINT `Cnst_MsgLogin_Login_5440` FOREIGN KEY (`IdProblem`) REFERENCES `msglogin` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=637 DEFAULT CHARSET=latin1;
-
 CREATE TABLE IF NOT EXISTS `mail` (
   `Id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
   `From` varchar(255) DEFAULT NULL COMMENT 'From',
