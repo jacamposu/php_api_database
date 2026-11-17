@@ -24,12 +24,15 @@ class MenuModel
 		$this->keyField = 'MeId';
 		$this->DeleteField = 'MeDeleted_at';
 		$this->idprofile = '60a815c4a7b05';
-		
 	}
 
 	public function GetMenuItems($level)
 	{
-		$sql = "SELECT MeId, IdParentMenu, MeName, MeMenuType, MeState, MeUrl, MeParams, IdIcon FROM menu WHERE deleted_at IS NULL AND MeMenuType=:level ORDER BY MenOrder ASC";
+		$sql = "SELECT MeId, IdParentMenu, MeName, MeMenuType, MeUrl, MeParams, IdIcon 
+				FROM menu 
+				WHERE deleted_at IS NULL 
+					AND MeMenuType=:level 
+				ORDER BY MenOrder ASC";
 
 		$data = [
 			':level' => $level
@@ -49,7 +52,7 @@ class MenuModel
 	public function All():array
 	{
 		return [
-			'query' => "SELECT MeId, IdParentMenu, MeName, MeState, MeUrl, MeParams, IdIcon, MeCreated_at FROM {$this->mainTable}",
+			'query' => "SELECT MeId, IdParentMenu, MeName, MeUrl, MeParams, IdIcon, MeCreated_at FROM {$this->mainTable}",
 			'type_result' => 'All'
 		];
 	}
@@ -65,7 +68,7 @@ class MenuModel
 	public function FormUpdate():array
 	{
 		return [
-			'query' => "SELECT MeId, IdParentMenu, MeName, MeState, MeUrl, MeParams, IdIcon FROM {$this->mainTable} WHERE {$this->keyField} = :keyfield",
+			'query' => "SELECT MeId, IdParentMenu, MeName, MeUrl, MeParams, IdIcon FROM {$this->mainTable} WHERE {$this->keyField} = :keyfield",
 			'type_result' => 'Row'
 		];
 	}
@@ -73,7 +76,7 @@ class MenuModel
 	public function FormAdd():array
 	{
 		return [
-			'query' => "SELECT NULL AS MeMenuType, NULL AS MeId, NULL AS IdParentMenu, NULL AS MeName, NULL AS MeState, NULL AS MeUrl, NULL AS MeParams, NULL AS IdIcon FROM DUAL",
+			'query' => "SELECT NULL AS MeMenuType, NULL AS MeId, NULL AS IdParentMenu, NULL AS MeName, NULL AS MeUrl, NULL AS MeParams, NULL AS IdIcon FROM DUAL",
 			'type_result' => 'Row'
 		];
 	}
@@ -81,7 +84,7 @@ class MenuModel
 	public function Search():array
 	{
 		return [
-			'query' => "SELECT NULL AS IdParentMenu, NULL AS MeName, NULL AS MeState FROM DUAL",
+			'query' => "SELECT NULL AS IdParentMenu, NULL AS MeName FROM DUAL",
 			'type_result' => 'Row'
 		];
 	}
@@ -89,7 +92,7 @@ class MenuModel
 	public function Row():array
 	{
 		return [
-			'query' => "SELECT MeId, IdParentMenu, MeName, MeState, MeUrl, MeParams, IdIcon FROM {$this->mainTable} WHERE {$this->keyField} = :keyfield",
+			'query' => "SELECT MeId, IdParentMenu, MeName, MeUrl, MeParams, IdIcon FROM {$this->mainTable} WHERE {$this->keyField} = :keyfield",
 			'type_result' => 'Row'
 		];
 	}
@@ -137,7 +140,21 @@ class MenuModel
 	public function GenerateMenu():array
 	{
 		return [
-			'query' => "SELECT MeId, IdParentMenu, MeName, MeMenuLevel, MeUrl, MeParams, IdIcon, MeMenuType, CAST(MeCreated_at AS DATE) AS MeCreated_at FROM {$this->mainTable}",
+			'query' => "SELECT 
+					IdUserTypeProfile,
+					MeId, 
+					IdParentMenu, 
+					MeName, 
+					MeMenuLevel, 
+					MeUrl, 
+					MeParams, 
+					IcFontAwesome, 
+					MeMenuType, 
+					CAST(MeCreated_at AS DATE) AS MeCreated_at 
+				FROM menu M
+					INNER JOIN icons I ON M.IdIcon = I.IcId
+					INNER JOIN profiles P ON P.IdMenu = M.MeId
+				WHERE P.IdUserTypeProfile = :profileUser",
 			'type_result' => 'All'
 		];
 	}

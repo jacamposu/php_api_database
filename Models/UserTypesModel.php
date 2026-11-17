@@ -125,4 +125,12 @@ class UserTypesModel
 			'type_result' => 'list'
 		];
 	}
+
+	public function Profiles():array
+	{
+		return [
+			'query' => "SELECT DISTINCT UtId FROM usertypes",
+			'type_result' => 'All'
+		];
+	}
 }

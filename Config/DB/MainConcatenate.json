@@ -117,7 +117,7 @@
     },
     "Users": {
         "concatenate": "concat_ws(\"' - '\", UseSurname, UseFirtsName)",
-        "orderBy": " order by IdUserTypeUser ASC, IdUserStatus ASC, UsrSurname ASC, UsrFirtsName ASC, UsrPassword ASC"
+        "orderBy": " order by IdUserTypeUser ASC, IdUserStatus ASC, UsrSurname ASC, UsrFirtsName ASC"
     },
     "UserStatus": {
         "concatenate": "concat_ws(\"' - '\", UsDescription)",

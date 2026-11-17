@@ -1539,8 +1539,51 @@ INSERT INTO `httpcodes` (`HcMessage`, `HcColor`, `HcIcon`, `HcCreated_at`, `HcDe
 	('error500', 'danger', 'Error', now(), NULL),
 	('error408', 'danger', 'Error', now(), NULL);
 
-INSERT INTO `users` (`UsrId`, `IdLang`, `IdAppStyle`, `IdUserTypeUser`, `IdUserStatus`, `UsrSurname`, `UsrSecondSurname`, `UsrFirtsName`, `UsrSecondName`, `UsrEmail`, `IdIdentificationType`, `IdCity`, `IdStateUser`, `IdCountryUser`, `UsrIdentificationNumber`, `UsrCellphone`, `UsrAddress`, `UsrEncryptedId`, `UsrPhoto`, `UsrCreated_at`, `UsrDeleted_at`) VALUES
-	('admin', 'Es', 'TA', 'Ad', 'A', 'Sistema', '', 'Administrador', '', 'joseacamposu@gmail.com', 'NIT', '11001', '11', '57', '1234567890', '3115695537', 'Calle 190', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', '610d453bb7bdf', now(), NULL);
+INSERT INTO `users` (
+    `UsrId`,
+    `IdLang`,
+    `IdAppStyle`,
+    `IdUserTypeUser`,
+    `IdUserStatus`,
+    `UsrSurname`,
+    `UsrSecondSurname`,
+    `UsrFirtsName`,
+    `UsrSecondName`,
+    `UsrEmail`,
+    `IdIdentificationType`,
+    `IdCity`,
+    `IdStateUser`,
+    `IdCountryUser`,
+    `UsrIdentificationNumber`,
+    `UsrCellphone`,
+    `UsrAddress`,
+    `UsrEncryptedId`,
+    `UsrPhoto`,
+    `UsrCreated_at`,
+    `UsrDeleted_at`
+) VALUES (
+    'admin',
+    'Es',
+    'TA',
+    'Ad',
+    'A',
+    'Sistema',
+    '',
+    'Administrador',
+    '',
+    'joseacamposu@gmail.com',
+    'NIT',
+    '11001',
+    '11',
+    '57',
+    '1234567890',
+    '3115695537',
+    'Calle 190',
+    'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec',
+    '610d453bb7bdf',
+    NOW(),
+    NULL
+);
 
 INSERT INTO `userspassword` (`CpId`, `IdUser`, `CpAccessNumber`, `CpPassword`, `CpFailedAttempts`, `CpLastIp`, `CpChangePasswordRequired`, `CpCreated_at`, `CpDeleted_at`) VALUES
 	(1, 'admin', 1, '50ce07fa2493214986aca14145500e6ecfeefd1adc23eb0d6a1ac66f8068a15f527e17b21ef04ddb85e4cfb40a808e9ed5b755f3f583078ecd606ee3d9a6c769', 0, 'localhost', 0, now(), NULL);
