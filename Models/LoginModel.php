@@ -25,7 +25,7 @@ class LoginModel
 		$this->dbfn = new DatabaseFunctions($config, $loader, $headers);
 		$this->concatenate = $loader->GetConcatenate();
 		$this->mainTable = 'login';
-		$this->dbAlternative = 'db2';
+		$this->dbAlternative = 'db1';
 		$this->DeleteField = 'LaDeleted_at';
 		$this->keyField = '';
 		$this->idprofile = '60a824c6cbcdc';
@@ -44,16 +44,9 @@ class LoginModel
 	public function RegisterLogout()
 	{
 		return [
-			'query' => "UPDATE login 
+			'query' => "UPDATE userslogin 
 						set deleted_at=now() 
-						where Id = (
-							SELECT MAX(Id) 
-							FROM login 
-							WHERE IdUser = :IdUser 
-							and IdProblem = :IdProblem 
-							AND Created_at >= :lastAccess
-							and Deleted_at IS NULL
-						)",
+						where Id = :loginId",
 			'type_result' => ''
 		];
 	}

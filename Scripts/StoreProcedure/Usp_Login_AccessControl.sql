@@ -36,6 +36,7 @@ BEGIN
     DECLARE t_Localization VARCHAR(255);
     DECLARE t_CreationDate DATETIME;
     DECLARE t_UsrEmail VARCHAR(255);
+    DECLARE t_IdUserLogin INT;
 
     DECLARE CONTINUE HANDLER FOR NOT FOUND
     BEGIN
@@ -124,19 +125,13 @@ BEGIN
         t_CreationDate,
         t_UsrEmail
     FROM users u
-        INNER JOIN userspassword cp
-            ON cp.IdUser = u.UsrId
-        LEFT JOIN appstyle aps
-            ON aps.AppId = u.IdAppStyle
-        INNER JOIN usertypes ut
-            ON ut.UtId = u.IdUserTypeUser
-        INNER JOIN cities c
-            ON c.CiId = u.IdCity
-        INNER JOIN states s
-            ON s.StId = u.IdStateUser
+        INNER JOIN userspassword cp ON cp.IdUser = u.UsrId AND cp.CpDeleted_at IS NULL
+        -- LEFT JOIN appstyle aps ON aps.AppId = u.IdAppStyle
+        INNER JOIN usertypes ut ON ut.UtId = u.IdUserTypeUser
+        INNER JOIN cities c ON c.CiId = u.IdCity
+        INNER JOIN states s ON s.StId = u.IdStateUser
     WHERE u.UsrId = _userId
       AND cp.CpPassword = _password
-      AND cp.CpDeleted_at IS NULL
     LIMIT 1;
 
     /* =======================================================
@@ -145,6 +140,7 @@ BEGIN
 
     IF _crearLog THEN
         INSERT INTO userslogin (IdUser,IdStatus,Attempt,Created_at) VALUES (_userId,t_IdUserStatus,_AccessNumber,NOW());
+        SET t_IdUserLogin = LAST_INSERT_ID();
     END IF;
 
     IF t_IdUserStatus <> 'A' THEN
@@ -170,6 +166,7 @@ BEGIN
 
         IF _crearLog THEN
             INSERT INTO userslogin (IdUser,IdStatus,Attempt,Created_at) VALUES (_userId,'W',_AccessNumber,NOW());
+            SET t_IdUserLogin = LAST_INSERT_ID();
         END IF;
 
         IF _AccessNumber >= _numberAttempts THEN
@@ -180,6 +177,7 @@ BEGIN
 
             IF _crearLog THEN
                 INSERT INTO userslogin (IdUser,IdStatus,Attempt,Created_at) VALUES (_userId,'B',_AccessNumber,NOW());
+                SET t_IdUserLogin = LAST_INSERT_ID();
             END IF;
 
         END IF;
@@ -214,6 +212,7 @@ BEGIN
 
         IF _crearLog THEN
             INSERT INTO userslogin (IdUser,IdStatus,Attempt,Created_at) VALUES (_userId,'I',_AccessNumber,NOW());
+            SET t_IdUserLogin = LAST_INSERT_ID();
         END IF;
 
         COMMIT;
@@ -270,7 +269,8 @@ BEGIN
         t_UsrAddress AS UsrAddress,
         t_Localization AS Localization,
         t_CreationDate AS CreationDate,
-        t_UsrEmail AS UsrEmail;
+        t_UsrEmail AS UsrEmail,
+        t_IdUserLogin AS IdLogin;
 
 END $$
 

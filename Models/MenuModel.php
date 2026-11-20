@@ -154,7 +154,7 @@ class MenuModel
 				FROM menu M
 					INNER JOIN icons I ON M.IdIcon = I.IcId
 					INNER JOIN profiles P ON P.IdMenu = M.MeId
-				WHERE P.IdUserTypeProfile = :profileUser",
+				",
 			'type_result' => 'All'
 		];
 	}

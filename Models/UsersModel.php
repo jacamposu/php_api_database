@@ -312,9 +312,9 @@ class UsersModel
 		return [
 			'query' => "SELECT UsrId, CpLastAccess
 						FROM users 
-						INNER JOIN controlpasswords ON IdUser = UsrId
+						INNER JOIN userspassword ON IdUser = UsrId
 						WHERE UsrEncryptedId = :hashUser
-						AND CpAccessNumber = (SELECT max(CpAccessNumber) FROM controlpasswords WHERE IdUser = UsrId)",
+						AND CpAccessNumber = (SELECT max(CpAccessNumber) FROM userspassword WHERE IdUser = UsrId)",
 			'type_result' => 'Row'
 		];
 	}
